@@ -10,7 +10,7 @@ void npa(char *str, int num)
 	i = 0;
 	do
 	{
-		rNum = rand()%26+1;
+		rNum = rand()%num+1;
 		
 		tahy[i] = rNum;
 		
@@ -25,17 +25,17 @@ void npa(char *str, int num)
 			}
 		}
 		
-		if (check != 1)
+		if (check == 0)
 			i++;
 		
 		printf("i = %d\n", i);
 		
-		for (i = 0; i < num; i++)
+	} while (i < num);
+	
+	for (i = 0; i < num; i++)
 		{
 			printf("%d\n", tahy[i]);
 		}
-		
-	} while (i < num);
 }
 
 main()
