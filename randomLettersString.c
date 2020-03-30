@@ -1,13 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void nahodna_permutacia_abecedy(char *str, int num)
+void npa(char *str, int num)
 {
-	
+	srand(time(NULL));
+	//printf("pismena: %s\nnum: %d\n", str, num); //test
+	char u;
+	int i, j, tahy[26] = {}, rNum, check;
+	i = 0;
+	do
+	{
+		rNum = rand()%26+1;
+		
+		tahy[i] = rNum;
+		
+		check = 0;
+		
+		for (j = 0; j < i; j++)
+		{
+			if (rNum == tahy[j])
+			{
+				check = 1;
+				continue;
+			}
+		}
+		
+		if (check != 1)
+			i++;
+		
+		printf("i = %d\n", i);
+		
+		for (i = 0; i < num; i++)
+		{
+			printf("%d\n", tahy[i]);
+		}
+		
+	} while (i < num);
 }
 
 main()
 {
+	srand(time(NULL));
 	int numL, isCorrect = 0;
 	do
 	{
@@ -26,6 +59,8 @@ main()
 	} while (isCorrect == 0); 
 	
 	char abc[26] = {};
+	char abc2[numL];
+	char abc3[] = {};
 	char u;
 	int i, j = 0;
 	
@@ -41,7 +76,11 @@ main()
 		j++;
 	}
 	
-	printf("%s\n", abc);
+	//printf("cely string: %s\n", abc);
 	
+	//#################TEST PROCEDURY#################\\
 	
+	npa(abc, numL);
+	
+	printf("task failed successfully\n");
 }
