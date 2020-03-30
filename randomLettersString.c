@@ -41,7 +41,8 @@ main()
 {
 	srand(time(NULL));
 	int numL, isCorrect = 0;
-	do
+	
+	do //kontrola inputu - este opravit to, ked sa nezada cislo
 	{
 	printf("pocet prvch malych pismen abecedy: \n");
 	scanf("%d", &numL);
