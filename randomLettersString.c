@@ -4,7 +4,6 @@
 void npa(char *str, int num)
 {
 	srand(time(NULL));
-	//printf("pismena: %s\nnum: %d\n", str, num); //test
 	char u;
 	int i, j, tahy[26] = {}, rNum, check, k = 97; //k je pre "hodnoty" pismen, i a j pre indexi
 	i = 0;
@@ -42,7 +41,7 @@ main()
 	srand(time(NULL));
 	int numL, isCorrect = 0;
 	
-	do //kontrola inputu - este opravit to, ked sa nezada cislo
+	do
 	{
 	printf("pocet prvch malych pismen abecedy: \n");
 	scanf("%d", &numL);
@@ -58,18 +57,17 @@ main()
 	
 	} while (isCorrect == 0); 
 	
-	char abc3[] = {};
+	char abc[] = {};
 	char u;
 	int i, j = 0;
 	
-	/*BASIC CONCEPT: este tu doplnit algoritmus na loteriu, ktory mi da random poradie numL
-	cislic, ktore budu potom pozicie v mojom abc poli, budu sa postupne naplnat a kazde cislo
-	bude predstavovat nejake ine pismeno*/
+	/*BASIC CONCEPT: pomocou algoritmu na loteriu, ktory mi da random numL
+	cislic bez opakovania -> pozície v stringu, budu nasledovne naplnane jednotlivé pozicie v mojom     stringu (abc), pričom písmená sa budú napĺňať postupne, ale na nahodne miesta v tom stringu*/
 	
 	//#################TEST PROCEDURY#################\\
 	
-	npa(abc3, numL);
-	printf("pismenka: %s\n", abc3);
+	npa(abc, numL);
+	printf("pismenka: %s\n", abc);
 	
 	printf("task failed successfully\n");
 }
