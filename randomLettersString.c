@@ -3,7 +3,6 @@
 
 void npa(char *str, int num)
 {
-	srand(time(NULL));
 	char u;
 	int i, j, tahy[26] = {}, rNum, check, k = 97; //k je pre "hodnoty" pismen, i a j pre indexi
 	i = 0;
@@ -27,7 +26,7 @@ void npa(char *str, int num)
 		if (check == 0)
 			{
 				u = k; // priradi pismenko to "u"
-				//printf("miesto: %d; char: %c\n", tahy[i], u); //kontrolne vypisovanie
+				printf("miesto: %d; char: %c\n", tahy[i], u); //kontrolne vypisovanie
 				str[tahy[i]] = u;
 				k++;
 				i++;
@@ -57,7 +56,7 @@ main()
 	
 	} while (isCorrect == 0); 
 	
-	char abc[] = {};
+	char abc[26] = {};
 	char u;
 	int i, j = 0;
 	
