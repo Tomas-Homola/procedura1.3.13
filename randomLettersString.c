@@ -28,7 +28,7 @@ void npa(char *str, int num)
 		if (check == 0)
 			{
 				u = k; // priradi pismenko to "u"
-				printf("miesto: %d; char: %c\n", tahy[i], u);
+				//printf("miesto: %d; char: %c\n", tahy[i], u); //kontrolne vypisovanie
 				str[tahy[i]] = u;
 				k++;
 				i++;
@@ -58,8 +58,6 @@ main()
 	
 	} while (isCorrect == 0); 
 	
-	//char abc[26] = {};
-	//char abc2[numL];
 	char abc3[] = {};
 	char u;
 	int i, j = 0;
@@ -67,9 +65,6 @@ main()
 	/*BASIC CONCEPT: este tu doplnit algoritmus na loteriu, ktory mi da random poradie numL
 	cislic, ktore budu potom pozicie v mojom abc poli, budu sa postupne naplnat a kazde cislo
 	bude predstavovat nejake ine pismeno*/
-
-	
-	//printf("cely string: %s\n", abc);
 	
 	//#################TEST PROCEDURY#################\\
 	
