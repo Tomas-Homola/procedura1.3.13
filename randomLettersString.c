@@ -27,9 +27,16 @@ void npa(char *str, int num)
 		j++;
 	}
 	
-	for (i = 0; i < num; i++)
+	if (num != 1) // ked je pocet pismen = 1, netreba nic prehadzovat
 	{
-		vymen(str, num);
+		//int x;
+		//x = rand()%num + 1; // celkovy pocet zavolani funkcie vymen, aby napr. pre cislo 26 nerobilo 26 zmien, ale iba nejaky mensi pocet (moze sa stat, ze to bude aj 26 samozrejme)
+		
+		for (i = 0; i < num; i++)	//bud < num alebo < x, este sa k tomuto spytat
+		{
+			//printf("zmena %d\n", i + 1);
+			vymen(str, num);
+		}
 	}
 }
 
