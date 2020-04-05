@@ -4,13 +4,11 @@
 void vymen(char *str, int num)
 {
 	int x, y;
-	do							// aby som nedostal rovnake hodnoty
-	{
-		x = rand()%num;
-		y = rand()%num;
-	} while (x == y);
 	
-	printf("x = %d\ny = %d\n", x, y);
+	x = rand()%num;
+	y = rand()%num;
+	
+	//printf("x = %d\ny = %d\n", x, y);	//kontrola
 	char u;
 	
 	u = str[x];
@@ -27,6 +25,11 @@ void npa(char *str, int num)
 		u = i;
 		str[j] = u;
 		j++;
+	}
+	
+	for (i = 0; i < num; i++)
+	{
+		vymen(str, num);
 	}
 }
 
@@ -51,14 +54,14 @@ main()
 	
 	} while (isCorrect == 0); 
 	
-	char abc[26] = {};
+	char abc[] = {};
 	
 	//#################TEST PROCEDURY#################\\
 	
 	npa(abc, numL);
 	printf("pismenka: %s\n", abc);
-	vymen(abc, numL);
-	printf("prehadzane pismenka: %s\n", abc);
+	//vymen(abc, numL);
+	//printf("prehadzane pismenka: %s\n", abc);
 	
 	printf("task failed successfully\n");
 }
